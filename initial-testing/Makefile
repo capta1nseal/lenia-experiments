@@ -12,7 +12,7 @@ TREE := $(sort $(patsubst %/,%,$(dir $(OBJS))))
 CPPFLAGS     = -MMD -MP -MF $(@:$(OBJDIR)/%.o=$(DEPDIR)/%.d)
 CXXWARNFLAGS = -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wzero-as-null-pointer-constant -Wunused -Woverloaded-virtual -Wformat=2 -Werror=vla -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wnull-dereference
 CXXFLAGS    := -std=c++20 -O3 $(CXXWARNFLAGS)
-LINKFLAGS    = -lSDL2 -lSDL2main
+LINKFLAGS    = -lSDL2 -lSDL2main# -lfftw3 -lm
 
 .PHONY: build test clean
 
